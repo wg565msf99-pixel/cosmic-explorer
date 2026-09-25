@@ -211,5 +211,279 @@ Mars
     document.getElementById("spaceFact").textContent = randomFact;
   }
 </script>
+<div class="space-system">
+
+  <div class="orbit orbit-1"></div>
+  <div class="orbit orbit-2"></div>
+  <div class="orbit orbit-3"></div>
+
+  <div class="celestial sun">
+    <div class="planet-light"></div>
+  </div>
+
+  <div class="celestial earth">
+    <div class="planet-surface"></div>
+  </div>
+
+  <div class="celestial moon"></div>
+
+  <div class="celestial mars">
+    <div class="planet-surface"></div>
+  </div>
+
+  <div class="celestial saturn">
+    <div class="saturn-ring"></div>
+    <div class="planet-surface"></div>
+  </div>
+
+</div>
+
+<style>
+.space-system {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  perspective: 1000px;
+}
+
+/* ORBITS */
+
+.orbit {
+  position: absolute;
+  border: 1px solid rgba(130, 180, 255, 0.18);
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.orbit-1 {
+  width: 420px;
+  height: 420px;
+}
+
+.orbit-2 {
+  width: 650px;
+  height: 650px;
+}
+
+.orbit-3 {
+  width: 900px;
+  height: 900px;
+}
+
+/* ALL CELESTIAL BODIES */
+
+.celestial {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: auto;
+  transition: transform 0.25s ease;
+  box-shadow:
+    inset -18px -15px 30px rgba(0,0,0,0.65),
+    inset 10px 8px 20px rgba(255,255,255,0.18);
+}
+
+.celestial:hover {
+  transform: scale(1.12);
+}
+
+/* SUN */
+
+.sun {
+  width: 150px;
+  height: 150px;
+  left: calc(50% - 75px);
+  top: calc(50% - 75px);
+
+  background:
+    radial-gradient(circle at 35% 30%, #fff9c4, #ffd21f 35%, #ff8c00 70%, #d83b00);
+
+  box-shadow:
+    0 0 30px #ffb300,
+    0 0 70px rgba(255,150,0,0.7),
+    0 0 130px rgba(255,100,0,0.35);
+}
+
+/* EARTH */
+
+.earth {
+  width: 75px;
+  height: 75px;
+  left: calc(50% + 190px);
+  top: calc(50% - 38px);
+
+  background:
+    radial-gradient(circle at 35% 30%, #74d9ff, #1769b0 55%, #052b61);
+
+  box-shadow:
+    0 0 15px rgba(80,180,255,0.8),
+    inset -15px -10px 20px rgba(0,0,0,0.65);
+}
+
+/* MOON */
+
+.moon {
+  width: 28px;
+  height: 28px;
+  left: calc(50% + 275px);
+  top: calc(50% - 90px);
+
+  background:
+    radial-gradient(circle at 35% 30%, #eeeeee, #999999 65%, #444444);
+
+  box-shadow:
+    inset -6px -5px 10px rgba(0,0,0,0.55),
+    0 0 8px rgba(255,255,255,0.25);
+}
+
+/* MARS */
+
+.mars {
+  width: 65px;
+  height: 65px;
+  left: calc(50% - 350px);
+  top: calc(50% - 32px);
+
+  background:
+    radial-gradient(circle at 30% 30%, #ff9b65, #c94a32 50%, #641d19);
+
+  box-shadow:
+    0 0 18px rgba(255,80,40,0.45),
+    inset -14px -10px 20px rgba(0,0,0,0.65);
+}
+
+/* SATURN */
+
+.saturn {
+  width: 85px;
+  height: 85px;
+  left: calc(50% + 330px);
+  top: calc(50% - 42px);
+
+  background:
+    radial-gradient(circle at 35% 30%, #fff0b0, #c9a95b 55%, #66532d);
+
+  box-shadow:
+    0 0 20px rgba(255,210,120,0.35),
+    inset -18px -12px 25px rgba(0,0,0,0.6);
+}
+
+.saturn-ring {
+  position: absolute;
+  width: 145px;
+  height: 38px;
+  left: -30px;
+  top: 23px;
+  border: 7px solid rgba(220,190,120,0.65);
+  border-radius: 50%;
+  transform: rotate(-15deg);
+  box-shadow: 0 0 8px rgba(255,220,150,0.25);
+}
+
+/* 3D LIGHT */
+
+.celestial::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      rgba(255,255,255,0.35),
+      transparent 25%
+    );
+  pointer-events: none;
+}
+
+/* SUBTLE FLOATING MOTION */
+
+.sun {
+  animation: sunPulse 4s ease-in-out infinite;
+}
+
+.earth {
+  animation: floatEarth 5s ease-in-out infinite;
+}
+
+.mars {
+  animation: floatMars 6s ease-in-out infinite;
+}
+
+.saturn {
+  animation: floatSaturn 7s ease-in-out infinite;
+}
+
+@keyframes sunPulse {
+  0%,100% { filter: brightness(1); }
+  50% { filter: brightness(1.15); }
+}
+
+@keyframes floatEarth {
+  0%,100% { margin-top: 0; }
+  50% { margin-top: -8px; }
+}
+
+@keyframes floatMars {
+  0%,100% { margin-top: 0; }
+  50% { margin-top: 10px; }
+}
+
+@keyframes floatSaturn {
+  0%,100% { margin-top: 0; }
+  50% { margin-top: -7px; }
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .orbit-3 {
+    width: 650px;
+    height: 650px;
+  }
+
+  .sun {
+    width: 110px;
+    height: 110px;
+    left: calc(50% - 55px);
+    top: calc(50% - 55px);
+  }
+
+  .earth {
+    width: 55px;
+    height: 55px;
+    left: calc(50% + 120px);
+  }
+
+  .mars {
+    width: 50px;
+    height: 50px;
+    left: calc(50% - 210px);
+  }
+
+  .saturn {
+    width: 60px;
+    height: 60px;
+    left: calc(50% + 200px);
+  }
+}
+</style>
+
+<script>
+document.addEventListener("mousemove", function(e) {
+
+  const x = (e.clientX / window.innerWidth - 0.5) * 2;
+  const y = (e.clientY / window.innerHeight - 0.5) * 2;
+
+  const system = document.querySelector(".space-system");
+
+  system.style.transform =
+    `rotateY(${x * 2}deg) rotateX(${-y * 2}deg)`;
+});
+</script>
+   
 </body>
 </html>
