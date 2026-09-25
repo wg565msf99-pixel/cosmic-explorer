@@ -156,6 +156,28 @@ Mars
     🔵 Neptune
   </button>
 </section>
-   
+<section style="text-align:center; padding:30px;">
+  <h2>🌠 Did You Know?</h2>
+  <p id="spaceFact">Click the button to discover a random space fact!</p>
+
+  <button onclick="showFact()">✨ Reveal a Fact</button>
+</section>
+
+<script>
+  const facts = [
+    "🌌 A day on Venus is longer than a year on Venus!",
+    "🪐 Saturn is less dense than water.",
+    "🌍 Earth is the only known planet with life.",
+    "🔴 Mars has the largest volcano in the Solar System.",
+    "☀️ The Sun contains most of the mass in our Solar System.",
+    "🌙 The Moon is slowly moving away from Earth.",
+    "🚀 Space is completely silent because sound needs a medium to travel."
+  ];
+
+  function showFact() {
+    const randomFact = facts[Math.floor(Math.random() * facts.length)];
+    document.getElementById("spaceFact").textContent = randomFact;
+  }
+</script>
 </body>
 </html>
