@@ -3,6 +3,198 @@
 <html>
   
   <style>
+
+#missions {
+  padding: 70px 20px;
+  margin-top: 50px;
+  position: relative;
+}
+
+#missions h2 {
+  font-size: 42px;
+  margin-bottom: 10px;
+  letter-spacing: 3px;
+  text-shadow:
+    0 0 10px #6b5cff,
+    0 0 25px #3b82f6;
+}
+
+#missions > p {
+  font-size: 18px;
+  color: #cbd5e1;
+  margin-bottom: 45px;
+}
+
+/* MISSION CARDS */
+
+.mission-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 25px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.mission-card {
+  width: 240px;
+  min-height: 300px;
+  padding: 25px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(30, 30, 70, 0.85),
+      rgba(5, 10, 30, 0.90)
+    );
+
+  border: 1px solid rgba(120, 100, 255, 0.5);
+  border-radius: 20px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    inset 0 0 25px rgba(100, 80, 255, 0.08);
+
+  backdrop-filter: blur(10px);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+/* 3D HOVER EFFECT */
+
+.mission-card:hover {
+  transform:
+    perspective(800px)
+    rotateX(5deg)
+    rotateY(-5deg)
+    translateY(-12px)
+    scale(1.03);
+
+  border-color: #8b7cff;
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.6),
+    0 0 30px rgba(100, 80, 255, 0.35);
+}
+
+/* MISSION ICON */
+
+.mission-icon {
+  font-size: 55px;
+  margin-bottom: 15px;
+
+  filter:
+    drop-shadow(0 0 10px rgba(120, 100, 255, 0.7));
+
+  transition: transform 0.4s ease;
+}
+
+.mission-card:hover .mission-icon {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* CARD TITLE */
+
+.mission-card h3 {
+  font-size: 23px;
+  margin: 10px 0 15px;
+
+  color: white;
+
+  text-shadow:
+    0 0 8px rgba(120, 100, 255, 0.6);
+}
+
+/* CARD TEXT */
+
+.mission-card p {
+  color: #cbd5e1;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* MISSION BUTTON */
+
+.mission-card button {
+  margin-top: 15px;
+
+  background: linear-gradient(
+    135deg,
+    #111827,
+    #312e81
+  );
+
+  color: white;
+
+  border: 1px solid #6b5cff;
+  border-radius: 12px;
+
+  padding: 11px 18px;
+
+  font-size: 14px;
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.mission-card button:hover {
+  transform: scale(1.08);
+
+  background: linear-gradient(
+    135deg,
+    #312e81,
+    #4c1d95
+  );
+
+  box-shadow:
+    0 0 18px rgba(107, 92, 255, 0.7);
+}
+
+/* MISSION INFORMATION BOX */
+
+#mission-info {
+  max-width: 850px;
+  margin: 55px auto 0;
+
+  padding: 30px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 23, 42, 0.9),
+      rgba(30, 27, 75, 0.8)
+    );
+
+  border: 1px solid rgba(120, 100, 255, 0.45);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.5),
+    inset 0 0 30px rgba(100, 80, 255, 0.08);
+
+  backdrop-filter: blur(12px);
+}
+
+#mission-info h3 {
+  font-size: 25px;
+  margin-top: 0;
+
+  text-shadow:
+    0 0 10px rgba(120, 100, 255, 0.7);
+}
+
+#mission-info p {
+  color: #cbd5e1;
+  line-height: 1.7;
+}   
     h1{ color: white; text-align:center; }
     h2{ color: white; text-align:center; }
   button {
@@ -449,6 +641,177 @@ document.addEventListener("mousemove", function(e) {
     `rotateY(${x * 2}deg) rotateX(${-y * 2}deg)`;
 });
 </script>
-   
+ ```html
+<section class="missions-section">
+
+  <h2 class="missions-title">🚀 NASA Space Missions 🌌</h2>
+
+  <div class="missions-container">
+
+    <div class="mission-card">
+      <div class="mission-icon">🌕</div>
+      <h3>Apollo 11</h3>
+      <p>The historic NASA mission that carried humans to the Moon for the first time in 1969.</p>
+    </div>
+
+    <div class="mission-card">
+      <div class="mission-icon">🔴</div>
+      <h3>Mars Perseverance</h3>
+      <p>A NASA rover exploring Mars and searching for signs of ancient microbial life.</p>
+    </div>
+
+    <div class="mission-card">
+      <div class="mission-icon">🪐</div>
+      <h3>Juno</h3>
+      <p>A NASA spacecraft studying Jupiter's atmosphere, magnetic field, and interior.</p>
+    </div>
+
+    <div class="mission-card">
+      <div class="mission-icon">🔭</div>
+      <h3>James Webb Space Telescope</h3>
+      <p>A powerful space telescope observing distant galaxies, stars, planets, and the early universe.</p>
+    </div>
+
+  </div>
+
+</section>
+
+```html
+<section class="missions-section">
+
+  <h2 class="missions-title">🚀 NASA Space Missions 🌌</h2>
+
+  <div class="missions-container">
+
+    <div class="mission-card">
+      <div class="mission-icon">🌕</div>
+      <h3>Apollo 11</h3>
+      <p>The historic NASA mission that carried humans to the Moon for the first time in 1969.</p>
+    </div>
+
+    <div class="mission-card">
+      <div class="mission-icon">🔴</div>
+      <h3>Mars Perseverance</h3>
+      <p>A NASA rover exploring Mars and searching for signs of ancient microbial life.</p>
+    </div>
+
+    <div class="mission-card">
+      <div class="mission-icon">🪐</div>
+      <h3>Juno</h3>
+      <p>A NASA spacecraft studying Jupiter's atmosphere, magnetic field, and interior.</p>
+    </div>
+
+    <div class="mission-card">
+      <div class="mission-icon">🔭</div>
+      <h3>James Webb Space Telescope</h3>
+      <p>A powerful space telescope observing distant galaxies, stars, planets, and the early universe.</p>
+    </div>
+
+  </div>
+
+</section>
+  ```html
+<section class="missions-section">
+
+  <h2 class="missions-title">🚀 NASA Space Missions 🌌</h2>
+
+  <div class="missions-container">
+
+    <div class="mission-card">
+      <div class="mission-icon">🌕</div>
+      <h3>Apollo 11</h3>
+      <p>The historic NASA mission that carried humans to the Moon for the first time in 1969.</p>
+    </div>
+
+    <div class="mission-card">
+      <div class="mission-icon">🔴</div>
+      <h3>Mars Perseverance</h3>
+      <p>A NASA rover exploring Mars and searching for signs of ancient microbial life.</p>
+    </div>
+
+    <div class="mission-card">
+      <div class="mission-icon">🪐</div>
+      <h3>Juno</h3>
+      <p>A NASA spacecraft studying Jupiter's atmosphere, magnetic field, and interior.</p>
+    </div>
+
+    <div class="mission-card">
+      <div class="mission-icon">🔭</div>
+      <h3>James Webb Space Telescope</h3>
+      <p>A powerful space telescope observing distant galaxies, stars, planets, and the early universe.</p>
+    </div>
+
+  </div>
+
+</section>
+  <!-- NASA MISSION SECTION -->
+<section id="missions">
+
+  <h2>🚀 NASA MISSIONS</h2>
+  <p>Explore some of humanity's most exciting space missions.</p>
+
+  <div class="mission-container">
+
+    <!-- MARS MISSION -->
+    <div class="mission-card">
+      <div class="mission-icon">🔴</div>
+      <h3>Mars Exploration</h3>
+      <p>
+        Discover the Red Planet, explore its surface,
+        and learn about NASA's robotic missions to Mars.
+      </p>
+      <button onclick="showMission('mars')">
+        Explore Mars
+      </button>
+    </div>
+
+    <!-- MOON MISSION -->
+    <div class="mission-card">
+      <div class="mission-icon">🌙</div>
+      <h3>Artemis Mission</h3>
+      <p>
+        Explore NASA's Artemis program and humanity's
+        return to the Moon.
+      </p>
+      <button onclick="showMission('moon')">
+        Explore Moon
+      </button>
+    </div>
+
+    <!-- JAMES WEBB -->
+    <div class="mission-card">
+      <div class="mission-icon">🔭</div>
+      <h3>James Webb Telescope</h3>
+      <p>
+        Look deeper into the universe and discover
+        distant stars, galaxies, and planets.
+      </p>
+      <button onclick="showMission('webb')">
+        Explore Webb
+      </button>
+    </div>
+
+    <!-- VOYAGER -->
+    <div class="mission-card">
+      <div class="mission-icon">🛰️</div>
+      <h3>Voyager Mission</h3>
+      <p>
+        Travel beyond the outer planets and discover
+        the distant regions of our solar system.
+      </p>
+      <button onclick="showMission('voyager')">
+        Explore Voyager
+      </button>
+    </div>
+
+  </div>
+
+  <!-- MISSION INFORMATION -->
+  <div id="mission-info">
+    <h3>🌌 Select a Mission</h3>
+    <p>Click on a mission above to learn more.</p>
+  </div>
+
+</section>
 </body>
 </html>
