@@ -578,6 +578,38 @@ document.addEventListener("mousemove", function(e) {
   system.style.transform =
     `rotateY(${x * 2}deg) rotateX(${-y * 2}deg)`;
 });
+  function showMission(mission) {
+
+  const info = document.getElementById("mission-info");
+
+  if (mission === "mars") {
+    info.innerHTML = `
+      <h3>🔴 Mars Exploration</h3>
+      <p>NASA's robotic missions study Mars, its surface, atmosphere, and history while searching for clues about its ancient environment.</p>
+    `;
+  }
+
+  if (mission === "moon") {
+    info.innerHTML = `
+      <h3>🌙 Artemis Mission</h3>
+      <p>NASA's Artemis program is designed to explore the Moon and develop technologies for future human missions to deep space.</p>
+    `;
+  }
+
+  if (mission === "webb") {
+    info.innerHTML = `
+      <h3>🔭 James Webb Space Telescope</h3>
+      <p>Webb observes distant galaxies, stars, and planets using powerful infrared instruments.</p>
+    `;
+  }
+
+  if (mission === "voyager") {
+    info.innerHTML = `
+      <h3>🛰️ Voyager Mission</h3>
+      <p>The Voyager spacecraft explored the outer planets and continue sending information from the distant reaches of our solar system.</p>
+    `;
+  }
+}
 </script>
 
  
