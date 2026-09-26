@@ -27,16 +27,13 @@
 
 /* MISSION CARDS */
 
-.mission-container {
-  display: flex;
+missions-container {
+  display: grid;
+  grid-template-columns: repeat(2, 220px);
   justify-content: center;
-  align-items: stretch;
-  gap: 25px;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: auto;
-}
-
+  gap: 20px;
+  padding: 20px;
+} 
 .mission-card {
   width: 240px;
   min-height: 300px;
@@ -641,43 +638,8 @@ document.addEventListener("mousemove", function(e) {
     `rotateY(${x * 2}deg) rotateX(${-y * 2}deg)`;
 });
 </script>
- ```html
-<section class="missions-section">
 
-  <h2 class="missions-title">🚀 NASA Space Missions 🌌</h2>
-
-  <div class="missions-container">
-
-    <div class="mission-card">
-      <div class="mission-icon">🌕</div>
-      <h3>Apollo 11</h3>
-      <p>The historic NASA mission that carried humans to the Moon for the first time in 1969.</p>
-    </div>
-
-    <div class="mission-card">
-      <div class="mission-icon">🔴</div>
-      <h3>Mars Perseverance</h3>
-      <p>A NASA rover exploring Mars and searching for signs of ancient microbial life.</p>
-    </div>
-
-    <div class="mission-card">
-      <div class="mission-icon">🪐</div>
-      <h3>Juno</h3>
-      <p>A NASA spacecraft studying Jupiter's atmosphere, magnetic field, and interior.</p>
-    </div>
-
-    <div class="mission-card">
-      <div class="mission-icon">🔭</div>
-      <h3>James Webb Space Telescope</h3>
-      <p>A powerful space telescope observing distant galaxies, stars, planets, and the early universe.</p>
-    </div>
-
-  </div>
-
-</section>
-
-```html
-<section class="missions-section">
+ section class="missions-section">
 
   <h2 class="missions-title">🚀 NASA Space Missions 🌌</h2>
 
@@ -810,8 +772,6 @@ document.addEventListener("mousemove", function(e) {
   <div id="mission-info">
     <h3>🌌 Select a Mission</h3>
     <p>Click on a mission above to learn more.</p>
-  </div>
-
-</section>
+  </div> 
 </body>
 </html>
