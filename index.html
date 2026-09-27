@@ -709,6 +709,44 @@ document.addEventListener("mousemove", function(e) {
     `;
   }
 }
+  ```javascript
+function showDiscovery(discovery) {
+
+  const info = document.getElementById("discovery-info");
+
+  if (discovery === "webb") {
+    info.innerHTML = `
+      <h3>🔭 James Webb Discoveries</h3>
+      <p>
+        The James Webb Space Telescope observes distant galaxies,
+        stars, and planets, helping scientists study the early universe.
+      </p>
+    `;
+  }
+
+  else if (discovery === "mars") {
+    info.innerHTML = `
+      <h3>🔴 Mars Discoveries</h3>
+      <p>
+        NASA's Mars missions study the planet's rocks, soil,
+        atmosphere, and ancient environments to learn about its history.
+      </p>
+    `;
+  }
+
+  else if (discovery === "space") {
+    info.innerHTML = `
+      <h3>🌌 Deep Space Discoveries</h3>
+      <p>
+        NASA uses powerful telescopes and spacecraft to study
+        distant stars, galaxies, planets, and other objects in space.
+      </p>
+    `;
+  }
+
+}
+```
+
 </script>
 
  
