@@ -181,6 +181,105 @@ p { color: white; text-align: center; }
   color: white;
   line-height: 1.6;
 }
+  ```css
+/* ==============================
+   NASA DATA & DISCOVERIES
+   ============================== */
+
+.discoveries-section {
+  text-align: center;
+  margin: 70px auto;
+  padding: 20px;
+}
+
+.discoveries-section h2 {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.discoveries-section > p {
+  color: white;
+  font-size: 17px;
+  margin-bottom: 30px;
+}
+
+.discoveries-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.discovery-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  padding: 25px;
+  color: white;
+  backdrop-filter: blur(8px);
+  transition: 0.3s ease;
+}
+
+.discovery-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.13);
+}
+
+.discovery-icon {
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+
+.discovery-card h3 {
+  color: white;
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.discovery-card p {
+  color: white;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.discovery-card button {
+  background: #111827;
+  color: white;
+  border: 1px solid #6b5cff;
+  border-radius: 12px;
+  padding: 10px 18px;
+  margin-top: 15px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.discovery-card button:hover {
+  transform: scale(1.05);
+}
+
+#discovery-info {
+  max-width: 700px;
+  margin: 30px auto 0;
+  padding: 20px;
+  color: white;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 18px;
+}
+
+#discovery-info h3 {
+  color: white;
+}
+
+/* Mobile layout */
+@media (max-width: 700px) {
+  .discoveries-container {
+    grid-template-columns: 1fr;
+  }
+} 
 </style>
 </head>
 
@@ -681,5 +780,63 @@ document.addEventListener("mousemove", function(e) {
     <h3>🌌 Select a Mission</h3>
     <p>Click on a mission above to learn more.</p>
   </div> 
+```html
+  </div>
+
+  <!-- NASA DATA & DISCOVERIES -->
+  <section class="discoveries-section">
+
+    <h2>🛰️ NASA DATA & DISCOVERIES</h2>
+    <p>Explore amazing discoveries from NASA's exploration of space.</p>
+
+    <div class="discoveries-container">
+
+      <!-- DISCOVERY 1 -->
+      <div class="discovery-card">
+        <div class="discovery-icon">🔭</div>
+        <h3>Webb Discoveries</h3>
+        <p>
+          The James Webb Space Telescope helps scientists
+          study distant galaxies, stars, and planets.
+        </p>
+        <button onclick="showDiscovery('webb')">
+          Learn More
+        </button>
+      </div>
+
+      <!-- DISCOVERY 2 -->
+      <div class="discovery-card">
+        <div class="discovery-icon">🔴</div>
+        <h3>Mars Discoveries</h3>
+        <p>
+          NASA's Mars missions study the planet's surface,
+          atmosphere, rocks, and ancient environments.
+        </p>
+        <button onclick="showDiscovery('mars')">
+          Learn More
+        </button>
+      </div>
+
+      <!-- DISCOVERY 3 -->
+      <div class="discovery-card">
+        <div class="discovery-icon">🌌</div>
+        <h3>Deep Space</h3>
+        <p>
+          NASA observes distant objects to help us understand
+          how stars, galaxies, and the universe evolve.
+        </p>
+        <button onclick="showDiscovery('space')">
+          Learn More
+        </button>
+      </div>
+
+    </div>
+
+    <div id="discovery-info">
+      <h3>✨ Choose a Discovery</h3>
+      <p>Click "Learn More" to explore.</p>
+    </div>
+
+  </section>  
 </body>
 </html>
