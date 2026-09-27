@@ -666,152 +666,7 @@ Mars
   }
 }
 </style>
-
-<script>
-document.addEventListener("mousemove", function(e) {
-
-  const x = (e.clientX / window.innerWidth - 0.5) * 2;
-  const y = (e.clientY / window.innerHeight - 0.5) * 2;
-
-  const system = document.querySelector(".space-system");
-
-  system.style.transform =
-    `rotateY(${x * 2}deg) rotateX(${-y * 2}deg)`;
-});
-  
-    
-
-</script>
-
- 
-</section>
-  <!-- NASA MISSION SECTION -->
-<section id="missions">,
-
-  <h2>🚀 NASA MISSIONS</h2>
-  <p>Explore some of humanity's most exciting space missions.</p>
-
-  <div class="missions-container">
-
-    <!-- MARS MISSION -->
-    <div class="mission-card">
-      <div class="mission-icon">🔴</div>
-      <h3>Mars Exploration</h3>
-      <p>
-        Discover the Red Planet, explore its surface,
-        and learn about NASA's robotic missions to Mars.
-      </p>
-      <button onclick="showMission('mars')">
-        Explore Mars
-      </button>
-    </div>
-
-    <!-- MOON MISSION -->
-    <div class="mission-card">
-      <div class="mission-icon">🌙</div>
-      <h3>Artemis Mission</h3>
-      <p>
-        Explore NASA's Artemis program and humanity's
-        return to the Moon.
-      </p>
-      <button onclick="showMission('moon')">
-        Explore Moon
-      </button>
-    </div>
-
-    <!-- JAMES WEBB -->
-    <div class="mission-card">
-      <div class="mission-icon">🔭</div>
-      <h3>James Webb Telescope</h3>
-      <p>
-        Look deeper into the universe and discover
-        distant stars, galaxies, and planets.
-      </p>
-      <button onclick="showMission('webb')">
-        Explore Webb
-      </button>
-    </div>
-
-    <!-- VOYAGER -->
-    <div class="mission-card">
-      <div class="mission-icon">🛰️</div>
-      <h3>Voyager Mission</h3>
-      <p>
-        Travel beyond the outer planets and discover
-        the distant regions of our solar system.
-      </p>
-      <button onclick="showMission('voyager')">
-        Explore Voyager
-      </button>
-    </div>
-
-  </div>
-
-  <!-- MISSION INFORMATION -->
-  <div id="mission-info">
-    <h3>🌌 Select a Mission</h3>
-    <p>Click on a mission above to learn more.</p>
-  </div> 
-```html
-  </div>
-
-  <!-- NASA DATA & DISCOVERIES -->
-  <section class="discoveries-section">
-
-    <h2>🛰️ NASA DATA & DISCOVERIES</h2>
-    <p>Explore amazing discoveries from NASA's exploration of space.</p>
-
-    <div class="discoveries-container">
-
-      <!-- DISCOVERY 1 -->
-      <div class="discovery-card">
-        <div class="discovery-icon">🔭</div>
-        <h3>Webb Discoveries</h3>
-        <p>
-          The James Webb Space Telescope helps scientists
-          study distant galaxies, stars, and planets.
-        </p>
-        <button onclick="showDiscovery('webb')">
-          Learn More
-        </button>
-      </div>
-
-      <!-- DISCOVERY 2 -->
-      <div class="discovery-card">
-        <div class="discovery-icon">🔴</div>
-        <h3>Mars Discoveries</h3>
-        <p>
-          NASA's Mars missions study the planet's surface,
-          atmosphere, rocks, and ancient environments.
-        </p>
-        <button onclick="showDiscovery('mars')">
-          Learn More
-        </button>
-      </div>
-
-      <!-- DISCOVERY 3 -->
-      <div class="discovery-card">
-        <div class="discovery-icon">🌌</div>
-        <h3>Deep Space</h3>
-        <p>
-          NASA observes distant objects to help us understand
-          how stars, galaxies, and the universe evolve.
-        </p>
-        <button onclick="showDiscovery('space')">
-          Learn More
-        </button>
-      </div>
-
-    </div>
-
-    <div id="discovery-info">
-      <h3>✨ Choose a Discovery</h3>
-      <p>Click "Learn More" to explore.</p>
-    </div>
-
-  </section>  
-```html
-<script>
+ <script>
 
 document.addEventListener("mousemove", function(e) {
 
@@ -856,7 +711,7 @@ function showMission(mission) {
   if (mission === "voyager") {
     info.innerHTML = `
       <h3>🛰️ Voyager Mission</h3>
-      <p>The Voyager spacecraft explored the outer planets and continue sending information from the distant reaches of our solar system.</p>
+      <p>The Voyager spacecraft explored the outer planets and continues sending information from the distant reaches of our solar system.</p>
     `;
   }
 
@@ -869,6 +724,27 @@ function showDiscovery(discovery) {
 
   if (discovery === "webb") {
     info.innerHTML = `
-      <h3>🔭 James  
+      <h3>🔭 James Webb Discoveries</h3>
+      <p>The James Webb Space Telescope observes distant galaxies, stars, and planets and helps scientists study the early universe.</p>
+    `;
+  }
+
+  if (discovery === "mars") {
+    info.innerHTML = `
+      <h3>🔴 Mars Discoveries</h3>
+      <p>NASA's Mars missions study the planet's rocks, soil, atmosphere, and ancient environments to learn about its history.</p>
+    `;
+  }
+
+  if (discovery === "space") {
+    info.innerHTML = `
+      <h3>🌌 Deep Space Discoveries</h3>
+      <p>NASA uses telescopes and spacecraft to study distant stars, galaxies, planets, and other objects in space.</p>
+    `;
+  }
+
+}
+
+</script>
 </body>
 </html>
