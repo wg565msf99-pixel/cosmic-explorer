@@ -677,61 +677,9 @@ document.addEventListener("mousemove", function(e) {
   system.style.transform =
     `rotateY(${x * 2}deg) rotateX(${-y * 2}deg)`;
 });
-  function showMission(mission) {
-
-  const info = document.getElementById("mission-info");
-
-  if (mission === "mars") {
-    info.innerHTML = `
-      <h3>🔴 Mars Exploration</h3>
-      <p>NASA's robotic missions study Mars, its surface, atmosphere, and history while searching for clues about its ancient environment.</p>
-    `;
-  }
-
-  if (mission === "moon") {
-    info.innerHTML = `
-      <h3>🌙 Artemis Mission</h3>
-      <p>NASA's Artemis program is designed to explore the Moon and develop technologies for future human missions to deep space.</p>
-    `;
-  }
-
-  if (mission === "webb") {
-    info.innerHTML = `
-      <h3>🔭 James Webb Space Telescope</h3>
-      <p>Webb observes distant galaxies, stars, and planets using powerful infrared instruments.</p>
-    `;
-  }
-
-  if (mission === "voyager") {
-    info.innerHTML = `
-      <h3>🛰️ Voyager Mission</h3>
-      <p>The Voyager spacecraft explored the outer planets and continue sending information from the distant reaches of our solar system.</p>
-    `;
-  }
+  
     
-function showDiscovery(discovery) {
 
-  const info = document.getElementById("discovery-info");
-
-  if (discovery === "webb") {
-    info.innerHTML =
-      "<h3>🔭 James Webb Discoveries</h3>" +
-      "<p>The James Webb Space Telescope observes distant galaxies, stars, and planets and helps scientists study the early universe.</p>";
-  }
-
-  else if (discovery === "mars") {
-    info.innerHTML =
-      "<h3>🔴 Mars Discoveries</h3>" +
-      "<p>NASA's Mars missions study the planet's rocks, soil, atmosphere, and ancient environments to learn about its history.</p>";
-  }
-
-  else if (discovery === "space") {
-    info.innerHTML =
-      "<h3>🌌 Deep Space Discoveries</h3>" +
-      "<p>NASA uses telescopes and spacecraft to study distant stars, galaxies, planets, and other objects in space.</p>";
-  }
-
-}
 </script>
 
  
@@ -861,5 +809,65 @@ function showDiscovery(discovery) {
     </div>
 
   </section>  
+```html
+<script>
+
+document.addEventListener("mousemove", function(e) {
+
+  const x = (e.clientX / window.innerWidth - 0.5) * 2;
+  const y = (e.clientY / window.innerHeight - 0.5) * 2;
+
+  const system = document.querySelector(".space-system");
+
+  if (system) {
+    system.style.transform =
+      `rotateY(${x * 2}deg) rotateX(${-y * 2}deg)`;
+  }
+
+});
+
+
+function showMission(mission) {
+
+  const info = document.getElementById("mission-info");
+
+  if (mission === "mars") {
+    info.innerHTML = `
+      <h3>🔴 Mars Exploration</h3>
+      <p>NASA's robotic missions study Mars, its surface, atmosphere, and history while searching for clues about its ancient environment.</p>
+    `;
+  }
+
+  if (mission === "moon") {
+    info.innerHTML = `
+      <h3>🌙 Artemis Mission</h3>
+      <p>NASA's Artemis program is designed to explore the Moon and develop technologies for future human missions to deep space.</p>
+    `;
+  }
+
+  if (mission === "webb") {
+    info.innerHTML = `
+      <h3>🔭 James Webb Space Telescope</h3>
+      <p>Webb observes distant galaxies, stars, and planets using powerful infrared instruments.</p>
+    `;
+  }
+
+  if (mission === "voyager") {
+    info.innerHTML = `
+      <h3>🛰️ Voyager Mission</h3>
+      <p>The Voyager spacecraft explored the outer planets and continue sending information from the distant reaches of our solar system.</p>
+    `;
+  }
+
+}
+
+
+function showDiscovery(discovery) {
+
+  const info = document.getElementById("discovery-info");
+
+  if (discovery === "webb") {
+    info.innerHTML = `
+      <h3>🔭 James  
 </body>
 </html>
